@@ -18,3 +18,10 @@ for i, s in enumerate(user_input):
             string_list.append(s)
             lop = i + 1
 string_list = string_list[:-1]
+
+while len(string_list) != 1:
+    temp = string_list[0] + string_list[1] + string_list[2]
+    del string_list[0:3]
+    string_list.insert(0, str(eval(temp)))
+result = float(string_list[0])
+print("result: {}".format(result))
