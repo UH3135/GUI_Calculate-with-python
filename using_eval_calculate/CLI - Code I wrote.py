@@ -26,7 +26,7 @@ del string_list[-1]  # 마지막 "=" 제거
 while len(string_list) > 1:  # 리스트 속 원소가 하나 남을때까지
     math_expr = string_list[0] + string_list[1] + string_list[2]  # 계산할 식
     try:
-        result = str(eval(math_expr))
+        result = str(eval(math_expr))  # 입력받은 식 계산
     except ZeroDivisionError:
         print("Can't division as 0")
         exit()
