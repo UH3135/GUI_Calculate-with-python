@@ -1,6 +1,6 @@
 from sys import exit
 
-a = input()
+user_input = input()
 opartor = [
     "+",
     "-",
@@ -12,14 +12,14 @@ string_list = []  # 나눈 문자열을 담을 리스트
 lop = 0  # 문자열 나누는 것을 도와주는 변수
 
 """입력 받은 값을 나누는 기능"""
-if a[-1] not in opartor:
-    a = a + "="
-for s in a:
+if user_input[-1] not in opartor:
+    user_input += "="
+for s in user_input:
     if s in opartor:  # 연산자를 기준으로 문자열을 나눔
         temp = ''.join(map(str, a[lop:a.index(s)]))  # 연산자 이전의 값을 문자열로 함수에 저장
         string_list.append(temp)
         string_list.append(s)
-        lop = a.index(s) + 1
+        lop = user_input.index(s) + 1
 del string_list[-1]  # 마지막 "=" 제거
 
 """나눈 문자열을 앞에서부터 천천히 계산하는 기능"""
