@@ -1,7 +1,7 @@
 from sys import exit
 
 user_input = input()
-opartor = [
+operator = [
     "+",
     "-",
     "*",
@@ -12,11 +12,11 @@ string_list = []  # 나눈 문자열을 담을 리스트
 lop = 0  # 문자열 나누는 것을 도와주는 변수
 
 """입력 받은 값을 나누는 기능"""
-if user_input[-1] not in opartor:
+if user_input[-1] not in operator:
     user_input += "="
 for s in user_input:
-    if s in opartor:  # 연산자를 기준으로 문자열을 나눔
-        temp = ''.join(map(str, a[lop:a.index(s)]))  # 연산자 이전의 값을 문자열로 함수에 저장
+    if s in operator:  # 연산자를 기준으로 문자열을 나눔
+        temp = ''.join(map(str, user_input[lop:user_input.index(s)]))  # 연산자 이전의 값을 문자열로 함수에 저장
         string_list.append(temp)
         string_list.append(s)
         lop = user_input.index(s) + 1
